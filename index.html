@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Red WiMAX – Blog de investigación</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+:root{--c1:#00d4ff;--c2:#ff4d8d;--c3:#ffc542;--c4:#4be38b;--c5:#a78bfa;--bd:#26304a}
+html{scroll-behavior:smooth}
+body{background:#0b0f1a;color:#e9eefb;padding-top:62px;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.65}
+.navbar{background:rgba(9,13,24,.92)!important;backdrop-filter:blur(8px);border-bottom:1px solid var(--bd)}
+.navbar-brand{font-weight:800;background:linear-gradient(90deg,var(--c1),var(--c2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav-link.active{color:var(--c3)!important;font-weight:700}
+.hero{background:radial-gradient(circle at 80% 20%,#3b1d6e,transparent 55%),linear-gradient(135deg,#061a3a,#0b3d91 60%,#00a3d9);padding:28px 12px 30px;text-align:center}
+.hero svg{width:100%;max-width:560px;height:auto}
+.hero h1{font-weight:800;font-size:clamp(2.2rem,8vw,3.4rem);background:linear-gradient(90deg,var(--c1),var(--c5),var(--c2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:10px 6px}
+.stat b{display:block;font-size:1.7rem;color:var(--c3)}
+.stat small{color:#cfe3ff}
+section.blk{background:#141b2d;border:1px solid var(--bd);border-top:4px solid var(--a,var(--c1));border-radius:16px;padding:22px;margin:22px 0;scroll-margin-top:72px}
+section.blk>h2{color:var(--a,var(--c1));font-weight:800;margin-bottom:12px}
+h3,h4{color:var(--c3)}
+.fig{margin:14px 0;background:#0d1324;border:1px solid var(--bd);border-radius:12px;padding:10px;text-align:center}
+.fig svg{width:100%;height:auto;max-width:640px}
+.fig small{display:block;color:#93a0bd}
+.box{background:#0d1324;border-left:4px solid var(--c3);padding:10px 14px;border-radius:8px;margin:12px 0}
+.card2{background:#0d1324;border:1px solid var(--bd);border-radius:12px;padding:14px;height:100%;transition:transform .25s,box-shadow .25s}
+.card2:hover{transform:translateY(-6px);box-shadow:0 8px 24px rgba(0,212,255,.25)}
+.av{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.chips span{padding:5px 12px;border-radius:20px;font-size:.85rem;font-weight:600;color:#0b0f1a;transition:transform .2s}
+.chips span:hover{transform:scale(1.12)}
+.table{--bs-table-bg:transparent}
+.table th{color:var(--c1)}
+.accordion{--bs-accordion-bg:#0d1324;--bs-accordion-btn-bg:#0d1324;--bs-accordion-active-bg:#1d2742}
+.rv{opacity:1}
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+.waves path{animation:wave 2.4s ease-in-out infinite}
+.waves path:nth-child(2),.waves path:nth-child(5){animation-delay:.4s}
+.waves path:nth-child(3),.waves path:nth-child(6){animation-delay:.8s}
+@keyframes wave{0%,100%{opacity:.15}50%{opacity:1}}
+.beacon{animation:blink 1.2s infinite}
+@keyframes blink{50%{opacity:.2}}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pl 3s ease-in-out infinite}
+.pulse.p2{animation-delay:1.2s}
+@keyframes pl{50%{transform:scale(1.08)}}
+.hero h1,.hero svg{animation:float 4s ease-in-out infinite}
+.hero h1{animation-name:none}
+@keyframes float{50%{transform:translateY(-8px)}}
+footer{color:#93a0bd;font-size:.85rem;text-align:center;padding:24px 12px 40px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#menu" data-bs-offset="80" tabindex="0">
+
+<nav class="navbar navbar-expand-lg fixed-top">
+<div class="container">
+<a class="navbar-brand" href="#inicio">📡 WiMAX</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="#intro">Introducción</a></li>
+<li class="nav-item"><a class="nav-link" href="#historia">Historia</a></li>
+<li class="nav-item"><a class="nav-link" href="#personajes">Personajes</a></li>
+<li class="nav-item"><a class="nav-link" href="#cobertura">Cobertura</a></li>
+<li class="nav-item"><a class="nav-link" href="#bolivia">Bolivia</a></li>
+<li class="nav-item"><a class="nav-link" href="#empresas">Empresas</a></li>
+<li class="nav-item"><a class="nav-link" href="#glosario">Glosario</a></li>
+</ul></div></div>
+</nav>
+
+<header class="hero" id="inicio">
+<svg viewBox="0 0 560 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Torre WiMAX emitiendo señal">
+<defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00d4ff"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs>
+<g class="waves" fill="none" stroke="#00d4ff" stroke-width="3" stroke-linecap="round">
+<path d="M225 70a70 70 0 0 1 0-56" opacity=".9"/><path d="M212 82a95 95 0 0 1 0-80" opacity=".6"/><path d="M199 94a120 120 0 0 1 0-104" opacity=".35"/>
+<path d="M335 70a70 70 0 0 0 0-56" opacity=".9"/><path d="M348 82a95 95 0 0 0 0-80" opacity=".6"/><path d="M361 94a120 120 0 0 0 0-104" opacity=".35"/>
+</g>
+<path d="M280 40 L255 200 M280 40 L305 200 M262 150 L298 150 M268 110 L292 110 M273 75 L287 75 M262 150 L305 200 M298 150 L255 200 M268 110 L298 150 M292 110 L262 150" stroke="url(#g1)" stroke-width="4" fill="none" stroke-linecap="round"/>
+<circle class="beacon" cx="280" cy="38" r="9" fill="#ff4d8d"/>
+<rect x="40" y="150" width="70" height="50" fill="#1d2742" stroke="#4be38b" stroke-width="3"/><path d="M32 152 L75 118 L118 152Z" fill="#4be38b"/><rect x="66" y="172" width="18" height="28" fill="#4be38b"/>
+<rect x="440" y="160" width="90" height="40" fill="#1d2742" stroke="#ffc542" stroke-width="3"/><path d="M432 162 L485 125 L538 162Z" fill="#ffc542"/>
+<rect x="150" y="175" width="60" height="25" rx="4" fill="#a78bfa"/><rect x="156" y="179" width="48" height="15" fill="#0b0f1a"/><path d="M144 200h72" stroke="#a78bfa" stroke-width="5"/>
+<path d="M0 200H560" stroke="#26304a" stroke-width="3"/>
+</svg>
+<h1>Red WiMAX</h1>
+<p class="lead mb-3">Interoperabilidad mundial para acceso por microondas · Blog de investigación</p>
+<div class="container"><div class="row g-2 justify-content-center">
+<div class="col-6 col-md-3"><div class="stat"><b data-count="2001">0</b><small>nace el WiMAX Forum</small></div></div>
+<div class="col-6 col-md-3"><div class="stat"><b data-count="50" data-suf=" km">0</b><small>alcance fijo aprox.</small></div></div>
+<div class="col-6 col-md-3"><div class="stat"><b data-count="70" data-suf=" Mbps">0</b><small>velocidad teórica inicial</small></div></div>
+<div class="col-6 col-md-3"><div class="stat"><b data-count="9">0</b><small>capitales en Bolivia (2008)</small></div></div>
+</div></div>
+</header>
+
+<main class="container">
+
+<section class="blk rv" id="intro" style="--a:var(--c1)">
+<h2>¿Qué es WiMAX?</h2>
+<p><b>WiMAX</b> (<i>Worldwide Interoperability for Microwave Access</i>) es una tecnología de banda ancha inalámbrica basada en el estándar <b>IEEE 802.16</b>. Permite dar acceso a Internet y transmitir datos, voz (VoIP) y video a grandes distancias sin tender cables de cobre o fibra óptica. Fue pensada para redes metropolitanas (MAN) y para llevar Internet a zonas de difícil acceso.</p>
+<div class="fig"><svg viewBox="0 0 640 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Esquema de una red WiMAX">
+<g font-family="system-ui,sans-serif" font-size="14" fill="#e9eefb" text-anchor="middle">
+<rect x="10" y="60" width="110" height="50" rx="10" fill="#0891b2"/><text x="65" y="90">Internet</text>
+<rect x="190" y="60" width="130" height="50" rx="10" fill="#7c3aed"/><text x="255" y="90">Estación base</text>
+<path d="M120 85H190" stroke="#00d4ff" stroke-width="4"/>
+<path d="M320 85 L430 30 M320 85 L430 85 M320 85 L430 140" stroke="#ffc542" stroke-width="3" stroke-dasharray="6 5"/>
+<rect x="430" y="10" width="110" height="40" rx="10" fill="#059669"/><text x="485" y="35">Hogar</text>
+<rect x="430" y="65" width="110" height="40" rx="10" fill="#db2777"/><text x="485" y="90">Empresa</text>
+<rect x="430" y="120" width="110" height="40" rx="10" fill="#d97706"/><text x="485" y="145">Laptop / móvil</text>
+</g></svg><small>La estación base recibe Internet y lo distribuye por radio a los usuarios.</small></div>
+<div class="accordion my-3" id="acc1">
+<div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#a1">⚙️ ¿Cómo funciona?</button></h2>
+<div id="a1" class="accordion-collapse collapse show" data-bs-parent="#acc1"><div class="accordion-body">La <b>estación base</b> está conectada a la red troncal (Internet). Desde una torre transmite por radio hacia las antenas de los usuarios (equipos llamados <b>CPE</b>). Cada usuario recibe la señal y se conecta como si tuviera un cable. Puede funcionar con línea de vista (LOS) o sin ella (NLOS), según la banda y el equipo.</div></div></div>
+<div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#a2">🧩 Componentes de la red</button></h2>
+<div id="a2" class="accordion-collapse collapse" data-bs-parent="#acc1"><div class="accordion-body"><ul class="mb-0"><li><b>Estación base (BS):</b> la antena/torre que cubre una celda.</li><li><b>Estación suscriptora (CPE):</b> el equipo del cliente (módem o antena).</li><li><b>Red troncal (backhaul):</b> el enlace que conecta la estación base con Internet.</li></ul></div></div></div>
+<div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#a3">🔬 Tecnologías clave</button></h2>
+<div id="a3" class="accordion-collapse collapse" data-bs-parent="#acc1"><div class="accordion-body"><ul class="mb-0"><li><b>OFDM / OFDMA:</b> reparte los datos en muchas subportadoras.</li><li><b>Modulación adaptativa</b> (QPSK, 16-QAM, 64-QAM): cambia según la calidad de la señal.</li><li><b>QoS:</b> prioriza tráfico como la voz y el video.</li><li><b>Duplexación TDD/FDD</b> y <b>seguridad</b> con cifrado AES.</li></ul></div></div></div>
+</div>
+<div class="row g-3">
+<div class="col-md-6"><div class="card2"><h4>✅ Ventajas</h4><ul class="mb-0"><li>Cubre grandes distancias con una sola torre.</li><li>Despliegue más rápido y barato que tender cable.</li><li>Útil en zonas rurales o de difícil acceso.</li><li>Soporta calidad de servicio (voz, video, datos).</li></ul></div></div>
+<div class="col-md-6"><div class="card2"><h4>⚠️ Desventajas</h4><ul class="mb-0"><li>La velocidad se reparte entre los usuarios de la celda.</li><li>Afectada por obstáculos, clima y distancia.</li><li>Poco soporte en celulares frente a LTE.</li><li>Perdió el apoyo de la industria y fue reemplazada.</li></ul></div></div>
+</div>
+<h3 class="mt-4">Comparación rápida</h3>
+<div class="table-responsive"><table class="table table-bordered align-middle">
+<tr><th>Característica</th><th>Wi-Fi</th><th>WiMAX</th><th>LTE (4G)</th></tr>
+<tr><td>Alcance típico</td><td>Decenas de metros</td><td>Varios km</td><td>Varios km</td></tr>
+<tr><td>Uso principal</td><td>Redes locales (LAN)</td><td>Redes metropolitanas y acceso fijo</td><td>Telefonía móvil de datos</td></tr>
+<tr><td>Estándar</td><td>IEEE 802.11</td><td>IEEE 802.16</td><td>3GPP</td></tr>
+<tr><td>Estado actual</td><td>Muy usado</td><td>En desuso</td><td>Muy usado</td></tr>
+</table></div>
+</section>
+
+<section class="blk rv" id="historia" style="--a:var(--c5)">
+<h2>📜 Historia</h2>
+<div class="fig"><svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Línea de tiempo de WiMAX">
+<g font-family="system-ui,sans-serif" text-anchor="middle" font-size="13">
+<path d="M20 100H620" stroke="#26304a" stroke-width="6" stroke-linecap="round"/>
+<circle cx="50" cy="100" r="12" fill="#00d4ff"/><text x="50" y="70" fill="#00d4ff" font-weight="700">1998</text><text x="50" y="135" fill="#e9eefb">Grupo</text><text x="50" y="152" fill="#e9eefb">802.16</text>
+<circle cx="150" cy="100" r="12" fill="#a78bfa"/><text x="150" y="70" fill="#a78bfa" font-weight="700">2001</text><text x="150" y="135" fill="#e9eefb">WiMAX</text><text x="150" y="152" fill="#e9eefb">Forum</text>
+<circle cx="250" cy="100" r="12" fill="#4be38b"/><text x="250" y="70" fill="#4be38b" font-weight="700">2004</text><text x="250" y="135" fill="#e9eefb">802.16-2004</text><text x="250" y="152" fill="#e9eefb">(fijo)</text>
+<circle cx="360" cy="100" r="12" fill="#ffc542"/><text x="360" y="70" fill="#ffc542" font-weight="700">2005</text><text x="360" y="135" fill="#e9eefb">802.16e</text><text x="360" y="152" fill="#e9eefb">(móvil)</text>
+<circle cx="470" cy="100" r="12" fill="#ff4d8d"/><text x="470" y="70" fill="#ff4d8d" font-weight="700">2011</text><text x="470" y="135" fill="#e9eefb">802.16m</text><text x="470" y="152" fill="#e9eefb">(WiMAX 2)</text>
+<circle cx="580" cy="100" r="12" fill="#93a0bd"/><text x="580" y="70" fill="#93a0bd" font-weight="700">2015+</text><text x="580" y="135" fill="#e9eefb">Declive</text><text x="580" y="152" fill="#e9eefb">frente a LTE</text>
+</g></svg><small>Línea de tiempo de WiMAX.</small></div>
+<ul>
+<li><b>1998–1999:</b> el IEEE crea el grupo de trabajo 802.16 para estandarizar la banda ancha inalámbrica.</li>
+<li><b>2001:</b> se funda el <b>WiMAX Forum</b>, que certifica la interoperabilidad de los equipos.</li>
+<li><b>2004:</b> estándar <b>802.16-2004</b> (WiMAX fijo).</li>
+<li><b>2005:</b> estándar <b>802.16e-2005</b> (WiMAX móvil).</li>
+<li><b>2006–2008:</b> primeros despliegues comerciales importantes (Corea con WiBro, EE.UU., Asia, Europa y Latinoamérica).</li>
+<li><b>2011:</b> <b>802.16m</b> (WiMAX 2) con velocidades muy superiores.</li>
+<li><b>Declive:</b> LTE se impuso y muchas redes WiMAX fueron apagadas o migradas desde mediados de la década de 2010.</li>
+</ul>
+<h3>Versiones del estándar</h3>
+<div class="table-responsive"><table class="table table-bordered">
+<tr><th>Versión</th><th>Año aprox.</th><th>Característica</th></tr>
+<tr><td>802.16</td><td>2001</td><td>Bandas de 10–66 GHz, requiere línea de vista</td></tr>
+<tr><td>802.16a</td><td>2003</td><td>Bandas de 2–11 GHz, permite operar sin línea de vista</td></tr>
+<tr><td>802.16-2004</td><td>2004</td><td>WiMAX fijo</td></tr>
+<tr><td>802.16e-2005</td><td>2005</td><td>WiMAX móvil</td></tr>
+<tr><td>802.16m</td><td>2011</td><td>WiMAX 2, orientado a 4G (objetivo de cientos de Mbps hasta ~1 Gbps)</td></tr>
+</table></div>
+</section>
+
+<section class="blk rv" id="personajes" style="--a:var(--c2)">
+<h2>👤 Personajes e instituciones clave</h2>
+<div class="row g-3">
+<div class="col-sm-6 col-lg-3"><div class="card2"><div class="av" style="background:#0891b2">RM</div><b>Roger B. Marks</b><br><small class="text-secondary">Ingeniero del NIST (EE.UU.), presidió el grupo IEEE 802.16 y fue figura central del estándar.</small></div></div>
+<div class="col-sm-6 col-lg-3"><div class="card2"><div class="av" style="background:#7c3aed">RR</div><b>Ron Resnick</b><br><small class="text-secondary">Primer presidente del WiMAX Forum, impulsor de la promoción y certificación.</small></div></div>
+<div class="col-sm-6 col-lg-3"><div class="card2"><div class="av" style="background:#059669">IE</div><b>IEEE</b><br><small class="text-secondary">Define el estándar técnico 802.16.</small></div></div>
+<div class="col-sm-6 col-lg-3"><div class="card2"><div class="av" style="background:#d97706">WF</div><b>WiMAX Forum</b><br><small class="text-secondary">Certifica que equipos de distintos fabricantes funcionen entre sí.</small></div></div>
+</div>
+<h3 class="mt-4">Fabricantes e impulsores</h3>
+<div class="chips"><span style="background:#00d4ff">Intel</span><span style="background:#ff4d8d">Nokia</span><span style="background:#ffc542">Alcatel-Lucent</span><span style="background:#4be38b">Motorola</span><span style="background:#a78bfa">Samsung</span><span style="background:#ff9f5a">Cisco</span></div>
+<p>Intel fue el gran promotor de WiMAX, incluso con chips para laptops.</p>
+</section>
+
+<section class="blk rv" id="cobertura" style="--a:var(--c4)">
+<h2>🗺️ Cobertura (lugares)</h2>
+<div class="fig"><svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Alcance de una estación base WiMAX">
+<g font-family="system-ui,sans-serif" font-size="14" text-anchor="middle">
+<circle class="pulse" cx="320" cy="150" r="140" fill="#4be38b" fill-opacity=".10" stroke="#4be38b" stroke-width="2" stroke-dasharray="8 6"/>
+<circle class="pulse p2" cx="320" cy="150" r="70" fill="#ffc542" fill-opacity=".18" stroke="#ffc542" stroke-width="2"/>
+<path d="M320 150 L320 12" stroke="#4be38b" stroke-width="2"/>
+<text x="320" y="30" fill="#4be38b" font-weight="700">Fijo: hasta ~30–50 km</text>
+<text x="320" y="88" fill="#ffc542" font-weight="700">Móvil: ~3–15 km</text>
+<path d="M320 150 L305 200 M320 150 L335 200 M310 175 L330 175" stroke="#00d4ff" stroke-width="4"/>
+<circle cx="320" cy="146" r="7" fill="#ff4d8d"/>
+<rect x="60" y="220" width="40" height="28" rx="4" fill="#059669"/><rect x="530" y="230" width="40" height="28" rx="4" fill="#d97706"/><rect x="520" y="70" width="40" height="28" rx="4" fill="#db2777"/><rect x="90" y="90" width="40" height="28" rx="4" fill="#7c3aed"/>
+</g></svg><small>Cobertura de una celda: círculo amarillo (móvil) y círculo verde (fijo).</small></div>
+<div class="table-responsive"><table class="table table-bordered">
+<tr><th>Modo</th><th>Alcance aproximado</th><th>Uso</th></tr>
+<tr><td>Fijo (802.16-2004)</td><td>~30–50 km con línea de vista</td><td>Internet para hogares, empresas y zonas rurales</td></tr>
+<tr><td>Móvil (802.16e)</td><td>~3–15 km por celda</td><td>Internet en movimiento, laptops, módems</td></tr>
+</table></div>
+<h3>Comparación de alcance (aprox.)</h3>
+<div class="mb-2">Wi-Fi<div class="progress"><div class="progress-bar bg-info" data-w="4">~0.1 km</div></div></div>
+<div class="mb-2">WiMAX móvil<div class="progress"><div class="progress-bar bg-warning" data-w="30">~15 km</div></div></div>
+<div class="mb-3">WiMAX fijo<div class="progress"><div class="progress-bar bg-success" data-w="100">~50 km</div></div></div>
+<div class="box"><b>Factores que afectan la cobertura:</b> línea de vista, banda de frecuencia, potencia, altura y tipo de antena, relieve del terreno, edificios, lluvia y cantidad de usuarios conectados.</div>
+<h3>Bandas de frecuencia típicas</h3>
+<div class="chips"><span style="background:#00d4ff">2.3 GHz</span><span style="background:#ff4d8d">2.5 GHz</span><span style="background:#ffc542">3.5 GHz</span><span style="background:#4be38b">5.8 GHz</span></div>
+<h3>Lugares donde se desplegó</h3>
+<div class="chips"><span style="background:#00d4ff">🇰🇷 Corea del Sur (WiBro)</span><span style="background:#ff4d8d">🇺🇸 Estados Unidos</span><span style="background:#ffc542">🇷🇺 Rusia</span><span style="background:#4be38b">🇯🇵 Japón</span><span style="background:#a78bfa">🇲🇾 Malasia</span><span style="background:#ff9f5a">🇵🇰 Pakistán</span><span style="background:#5eead4">🇮🇳 India</span><span style="background:#f9a8d4">🇧🇴 Bolivia y otros países de Latinoamérica</span></div>
+</section>
+
+<section class="blk rv" id="bolivia" style="--a:var(--c3)">
+<h2>🇧🇴 WiMAX en Bolivia</h2>
+<div class="fig"><svg viewBox="0 0 640 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Colores de Bolivia">
+<rect x="20" y="10" width="600" height="30" fill="#d52b1e"/><rect x="20" y="40" width="600" height="30" fill="#f9e300"/><rect x="20" y="70" width="600" height="30" fill="#007934"/>
+<text x="320" y="61" font-family="system-ui,sans-serif" font-size="20" font-weight="800" text-anchor="middle" fill="#0b0f1a">BOLIVIA · WiMAX 2008</text>
+</svg></div>
+<ul>
+<li><b>2008:</b> <b>Entel</b> firmó con Alcatel-Lucent el contrato para la <b>primera red comercial WiMAX del país</b>, para Internet de banda ancha, voz IP, video y datos.</li>
+<li><b>Antenas:</b> se anunció la instalación en las nueve ciudades capitales de departamento.</li>
+<li><b>Objetivo:</b> evitar el costo de tender cables de cobre o fibra.</li>
+<li><b>Tigo:</b> también figura entre los operadores que ofrecieron Internet WiMAX.</li>
+<li><b>Hoy:</b> el acceso se apoya sobre todo en 4G/LTE y fibra; WiMAX quedó como parte de la historia de la banda ancha inalámbrica.</li>
+</ul>
+<div class="chips"><span style="background:#ff6b6b">La Paz</span><span style="background:#ffc542">Santa Cruz</span><span style="background:#4be38b">Cochabamba</span><span style="background:#00d4ff">Oruro</span><span style="background:#a78bfa">Potosí</span><span style="background:#f9a8d4">Sucre</span><span style="background:#ff9f5a">Tarija</span><span style="background:#5eead4">Trinidad</span><span style="background:#fde68a">Cobija</span></div>
+<h3>Contexto de los operadores</h3>
+<div class="row g-3">
+<div class="col-md-4"><div class="card2"><b>Entel</b><br><small class="text-secondary">Empresa Nacional de Telecomunicaciones, fundada en 1965. Fue nacionalizada el 1 de mayo de 2008 (DS 29544).</small></div></div>
+<div class="col-md-4"><div class="card2"><b>Tigo</b><br><small class="text-secondary">Antes Telecel; comenzó a operar en 1990 en Santa Cruz. Ofrece internet por cable y WiMAX.</small></div></div>
+<div class="col-md-4"><div class="card2"><b>Viva</b><br><small class="text-secondary">Nuevatel PCS, fundada en 1999, tercer operador móvil del país.</small></div></div>
+</div>
+<div class="box mt-3"><b>¿Por qué servía en Bolivia?</b> La geografía del país (altiplano, valles y llanos, con zonas alejadas) hace costoso tender cable; una torre con cobertura amplia era una alternativa práctica.</div>
+</section>
+
+<section class="blk rv" id="empresas" style="--a:#5aa6ff">
+<h2>🏢 Empresas que aplican (o aplicaron) WiMAX en el mundo</h2>
+<div class="row g-3">
+<div class="col-sm-6 col-lg-4"><div class="card2"><div class="av" style="background:#0891b2">CW</div><b>Clearwire / Sprint (Xohm)</b><br>🇺🇸 Estados Unidos<br><small class="text-secondary">Gran red WiMAX móvil; luego migró a LTE.</small></div></div>
+<div class="col-sm-6 col-lg-4"><div class="card2"><div class="av" style="background:#7c3aed">KT</div><b>KT y SK Telecom (WiBro)</b><br>🇰🇷 Corea del Sur<br><small class="text-secondary">Pioneros del WiMAX móvil.</small></div></div>
+<div class="col-sm-6 col-lg-4"><div class="card2"><div class="av" style="background:#db2777">Y</div><b>Yota</b><br>🇷🇺 Rusia<br><small class="text-secondary">Operó WiMAX antes de pasar a LTE.</small></div></div>
+<div class="col-sm-6 col-lg-4"><div class="card2"><div class="av" style="background:#059669">UQ</div><b>UQ Communications</b><br>🇯🇵 Japón<br><small class="text-secondary">Servicio UQ WiMAX.</small></div></div>
+<div class="col-sm-6 col-lg-4"><div class="card2"><div class="av" style="background:#d97706">P1</div><b>Packet One (P1)</b><br>🇲🇾 Malasia<br><small class="text-secondary">Servicio WiMAX comercial.</small></div></div>
+<div class="col-sm-6 col-lg-4"><div class="card2"><div class="av" style="background:#2563eb">W</div><b>Wateen</b><br>🇵🇰 Pakistán<br><small class="text-secondary">Gran operador WiMAX.</small></div></div>
+<div class="col-sm-6 col-lg-4"><div class="card2"><div class="av" style="background:#dc2626">E</div><b>Entel y Tigo</b><br>🇧🇴 Bolivia<br><small class="text-secondary">Ofrecieron Internet WiMAX.</small></div></div>
+</div>
+<p class="text-secondary mt-2"><small>Nota: muchas de estas redes ya fueron apagadas o migradas a LTE.</small></p>
+<h3 class="mt-3">¿Por qué WiMAX perdió frente a LTE?</h3>
+<ul>
+<li>La mayoría de los grandes operadores móviles eligió LTE como camino a 4G.</li>
+<li>LTE tuvo más fabricantes, más celulares y economías de escala.</li>
+<li>Los teléfonos con WiMAX eran pocos, lo que frenó su crecimiento.</li>
+</ul>
+</section>
+
+<section class="blk rv" id="glosario" style="--a:var(--c1)">
+<h2>📖 Glosario</h2>
+<div class="table-responsive"><table class="table table-bordered">
+<tr><th>Término</th><th>Significado</th></tr>
+<tr><td>IEEE 802.16</td><td>Familia de estándares en la que se basa WiMAX</td></tr>
+<tr><td>MAN</td><td>Red de área metropolitana</td></tr>
+<tr><td>CPE</td><td>Equipo del cliente que recibe la señal</td></tr>
+<tr><td>LOS / NLOS</td><td>Con línea de vista / sin línea de vista</td></tr>
+<tr><td>OFDMA</td><td>Técnica que reparte usuarios en subportadoras</td></tr>
+<tr><td>QoS</td><td>Calidad de servicio: prioriza tipos de tráfico</td></tr>
+<tr><td>Backhaul</td><td>Enlace que conecta la estación base con la red principal</td></tr>
+</table></div>
+</section>
+
+<section class="blk rv" style="--a:var(--c4)">
+<h2>✅ Conclusión</h2>
+<p>WiMAX fue clave para llevar banda ancha inalámbrica a grandes áreas y zonas rurales cuando el cable era costoso. Aunque LTE y la fibra la desplazaron, sentó las bases de las redes móviles de datos actuales. En Bolivia, Entel fue pionera en desplegarla comercialmente en 2008.</p>
+</section>
+</main>
+
+<footer>Fuentes consultadas: IEEE 802.16, WiMAX Forum, Telecombol (2008), Wikipedia (Tigo Bolivia, Entel Bolivia, Viva Bolivia).<br>Trabajo de investigación · INCOS El Alto-Sistemas Informaticos 2do B Nro 53</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+(function(){
+var els=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08});
+els.forEach(function(e){io.observe(e)});
+}else{els.forEach(function(e){e.classList.add('in')})}
+setTimeout(function(){els.forEach(function(e){e.classList.add('in')})},4000);
+document.querySelectorAll('[data-count]').forEach(function(el){
+var end=+el.dataset.count,suf=el.dataset.suf||'',t0=null;
+function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/1500,1);el.textContent=Math.round(end*p)+suf;if(p<1)requestAnimationFrame(step)}
+requestAnimationFrame(step);
+});
+document.querySelectorAll('.progress-bar').forEach(function(b){
+var w=b.dataset.w;b.style.width='0';b.style.transition='width 1.6s ease';
+setTimeout(function(){b.style.width=w+'%'},400);
+});
+})();
+</script>
+</body>
+</html>
